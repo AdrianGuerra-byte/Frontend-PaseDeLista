@@ -1,0 +1,13 @@
+# Netlify configuration
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirect all routes to index.html for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables (estas se configuran en el dashboard de Netlify)
+# VITE_API_URL = "https://tu-api.com/api"
