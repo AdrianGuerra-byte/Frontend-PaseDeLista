@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { Participante, ListaEspera, Estadisticas } from './types';
-import { api } from './services/api';
+import { api, API_URL } from './services/api';
 import Header from './components/Header';
 import ParticipantCard from './components/ParticipantCard';
 import ListaEsperaCard from './components/ListaEsperaCard';
@@ -40,7 +40,10 @@ function App() {
       setSelectedIds(preselected);
     } catch (error) {
       console.error('Error al cargar datos:', error);
-      alert('Error al cargar los datos. ¿Está corriendo el servidor en http://localhost:3000?');
+      // Mostrar mensaje dinámico usando la URL configurada en runtime
+      alert(`Error al cargar los datos desde ${API_URL}.\n
+Verifica que el backend esté en ejecución y que la URL en ".env" sea correcta.\n
+Si estás en desarrollo, reinicia el servidor de frontend para recargar las variables de entorno.`);
     } finally {
       setLoading(false);
     }
