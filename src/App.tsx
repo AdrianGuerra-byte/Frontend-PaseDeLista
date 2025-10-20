@@ -5,7 +5,6 @@ import Header from './components/Header';
 import ParticipantCard from './components/ParticipantCard';
 import ListaEsperaCard from './components/ListaEsperaCard';
 import Modal from './components/Modal';
-import { DebugInfo } from './DebugInfo';
 
 function App() {
   const [participantes, setParticipantes] = useState<Participante[]>([]);
@@ -345,9 +344,6 @@ Si estás en desarrollo, reinicia el servidor de frontend para recargar las vari
         title="Agregar a Lista de Espera"
         tipo="espera"
       />
-      
-      {/* Debug: Muestra la URL que está usando el frontend */}
-      <DebugInfo />
     </div>
   );
 }
